@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name=”description” content="The Disney Death Tour is a MEmorial, an internet monument that allows visitors of Walt Disney World in Orlando, Florida to recognize the many deaths that occur within the park that go otherwise unacknowledged.">
+    <meta property="og:title" content="Anderson and Crider, Disney Death Tour: Monumentality, Tourism, and the Rhetoric of Mapping Death" />
+    <meta property="og:url" content="http://www.disneydeathtour.com" />
+    <meta property="og:description" content="The Disney Death Tour is a MEmorial, an internet monument that allows visitors of Walt Disney World in Orlando, Florida to recognize the many deaths that occur within the park that go otherwise unacknowledged." />
+    <meta property="og:image" content="http://www.disneydeathtour.com/img/screenshot.jpg" />
+    <title>Anderson and Crider, Disney Death Tour: Monumentality, Tourism, and the Rhetoric of Mapping Death</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/1.9.33/css/materialdesignicons.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109153968-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109153968-1');
+    </script>
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header center-text">
+          <a href="index.html"><img src="img/ddt_logo.png" class="logo-text-1" alt="Disney Death Tour logo"><img src="img/dt_logo.png" class="logo-text-2" alt="Death Tour logo"></a>
+        </div>
+        <div class="navbar-header navbar-left">
+          <i class="navbar-left mdi mdi-menu mdi-24px" aria-hidden="true" id="sidebar-toggle-btn"></i>
+        </div>
+      </div>
+    </div>
+
+<!--Sidebar-->
+    <div class="sidebar-backdrop" hidden="true" id="sidebar-backdrop"></div>
+    <div id="container">
+      <div id="sidebar" class="pre-scrollable">
+        <div class="sidebar-wrapper">
+          <div class="panel panel-default" id="toc">
+            <div class="panel-heading">
+              <img class="logo" src="img/mortimerhead.png" alt="Tombstone with mouse ears."/>
+            </div>
+            <div id="table-contents">
+              <table class="table table-hover">
+              <div class="list" id="Items">
+                <!--Add class="sw" to randomize-->
+                <li class="list-group-item clickable random-section" data-toggle="modal" data-target="#deardisney">
+                  <span class="text-nowrap"><i class="mdi mdi-arrow-up-bold mdi-18px"></i>Welcome to the Tour</span></li>
+                <li class="list-group-item clickable" data-toggle="modal" data-target="#introduction">
+                  <span class="text-nowrap"><i class="mdi mdi-gondola mdi-18px"></i>Introduction</span></li>
+                <li class="list-group-item clickable random-section" data-toggle="modal" data-target="#monumentality">
+                  <span class="text-nowrap"><i class="mdi mdi-castle mdi-18px"></i>Monumentality</span></li>
+                <li class="list-group-item clickable random-section" data-toggle="modal" data-target="#thanatourism">
+                  <span class="text-nowrap"><i class="mdi mdi-rowing mdi-18px"></i>Thanatourism</span></li>
+                <li class="list-group-item clickable random-section" data-toggle="modal" data-target="#deathrhet">
+                  <span class="text-nowrap"><i class="mdi mdi-skull mdi-18px"></i>Death Rhetoric</span></li>
+                <li class="list-group-item clickable random-section" data-toggle="modal" data-target="#augmentedreality">
+                  <span class="text-nowrap"><i class="mdi mdi-buffer mdi-18px"></i>Augmented Reality</span></li>
+                <li class="list-group-item clickable random-section" data-toggle="modal" data-target="#mortimer">
+                  <span class="text-nowrap"><i class="mdi mdi-snowflake mdi-18px"></i>Memento Mortimer</span></li>
+                <li class="list-group-item clickable random-section" data-toggle="modal" data-target="#punctum">
+                  <span class="text-nowrap"><i class="mdi mdi-alert-circle-outline mdi-18px"></i>Punctum Notifications</span></li>
+                <li class="list-group-item clickable" data-toggle="modal" data-target="#acknowledgments">
+                  <span class="text-nowrap"><i class="mdi mdi-thumb-up mdi-18px"></i>Acknowledgments</span></li>
+                <li class="list-group-item clickable" data-toggle="modal" data-target="#references">
+                  <span class="text-nowrap"><i class="mdi mdi-format-quote-close mdi-18px"></i>References</span></li>
+                <li class="list-group-item clickable" data-toggle="modal" data-target="#techspecs">
+                  <span class="text-nowrap"><i class="mdi mdi-settings mdi-18px"></i>Technical Specifications</span></li>
+              </div>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!--Map-->
+        <div id="map"></div>
+    </div>
+  <!--End Sidebar-->
+
+  <div id="snackbar" class="alert">
+    <div class="snackbar-text">Select “Welcome to the Tour” to begin.</div>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">DISMISS</a>
+  </div>
+
+  <!-- About
+    <div class="modal fade" id="about" role="dialog">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <button id="about-close" type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Welcome to the Tour</h1>
+          </div>
+<article class="modal-body">
+<p>The Disney Death Tour is a MEmorial, an internet monument that allows
+visitors of Walt Disney World in Orlando, Florida, to recognize the many deaths
+that happen within the park that go otherwise completely unacknowledged. Like
+the park itself, this tour can be experienced in any order.</p>
+
+<p>That being said, there are two primary interfaces for navigating the park.
+The first is to use the map provided in this mobile-friendly website to discover
+sites of death throughout the park. The second is to use the Death Tour’s
+companion smartphone application, Hidden Mortimers, which allows users to view
+emplaced markers throughout the park with the aid of an augmented reality
+interface.</p>
+
+<img src='img/DDTmapphone.png' width='50%' alt='Mobile website including map'/><img src='img/DDTmortimerphone.png' width='50%' alt='Phone app in use'/>
+
+<p>The Disney Death Tour is not affiliated with or endorsed by the Walt Disney
+Company in any way, although we do welcome them to implement the ideas presented
+here into their parks. This is not a critique of the Walt Disney Company or its
+practices, but instead a form of parody. This is not to say that we are making a
+joke of these deaths, or mocking Disney for unethical practices, but rather that
+we are deploying a parodic logic in order to reflect on the abject sacrifices
+made as a part of our value system as it relates to entertainment culture.</p>
+</article>
+          <div class="modal-footer">
+            <button id="about-exit-btn" type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div> -->
+
+<!-- Dear Disney -->
+  <div class="modal fade essay-section" id="deardisney" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h1 class="modal-title">Welcome to the Tour</h1>
+        </div>
+<article class="modal-body">
+<p><img class="img-responsive" src="img/mementomori.png" alt="Skeletons with mouse ears."></p>
+
+<p></p>
+
+<img src='img/DDTmapphone.png' width='50%' alt='Mobile website including map'/><img src='img/DDTmortimerphone.png' width='50%' alt='Phone app in use'/>
+
+</article>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Intro -->
+    <div class="modal fade essay-section" id="introduction" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Disney Death Tour: Monumentality, Tourism, and the Rhetoric of Mapping Death</h1>
+          </div>
+
+<article class="modal-body">
+  <p><img class="img-responsive" src="img/intro-banner.png" alt="Website screenshot showing Raymond Barlow marker."></p>
+<section class="epigraph">
+<p>“Individual and collective traumas are part of nearly every inhabited place’s invisible landscape.”<br/>&mdash;Mark Sample, “Location Is Not Compelling (Until It Is Haunted)”</p>
+<p>“[T]he process of MEmorializing begins with a sting (punctum) received
+from a news item, a story from the daily dose of information circulated by
+journalism.”<br/>&mdash;Gregory L. Ulmer, <i>Electronic Monuments</i></p>
+<p>“A Walt Disney World custodian plunged 40 feet to his death Sunday morning
+after clinging to the outside of a rising cable car that had swept him from a
+platform.”<br/>&mdash;<i>Orlando Sentinel</i>, 14 February, 1999</p>
+</section>
+
+</article>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+            <!--<button type="button" class="btn btn-default pull-right" data-dismiss="modal" data-toggle="modal" href="#monumentality">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Monumentality -->
+    <div class="modal fade essay-section" id="monumentality" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Monumentality</h1>
+          </div>
+
+<article class="modal-body">
+  <p><img class="img-responsive" src="img/monumentality-banner.png" alt="Website screenshot showing Lane Graves marker."></p>
+<section class="epigraph">
+<p>“To write the disaster is to find the group subject in me. What is to be done
+remains open to invention.”
+<br/>&mdash;Gregory L. Ulmer, <i>Electronic Monuments</i></p>
+</section>
+
+</article>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Thanatourism -->
+    <div class="modal fade essay-section" id="thanatourism" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Thanatourism</h1>
+          </div>
+
+<article class="modal-body">
+
+<p><img class="img-responsive" src="img/thanatourism.png" alt="Ferris wheel at Chernobyl."></p>
+
+<section class="epigraph">
+<p>“The challenge of the EmerAgency is to show that tourism is capable of
+influencing public policy through bearing witness to base sacrifice.”
+<br/>&mdash;Gregory L. Ulmer, <i>Electronic Monuments</i></p>
+
+<p>“What occupies space, then, are bodies: specific bodies that mark and identify segments of the space they occupy.”
+<br/>&mdash;Sid Dobrin, <em>Postcomposition</em></p>
+</section>
+
+</article>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Death Rhetoric -->
+    <div class="modal fade essay-section" id="deathrhet" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Death Rhetoric</h1>
+          </div>
+<article class="modal-body">
+  <p><img class="img-responsive" src="img/deathrhetoric-banner.png" alt="Screenshot of Death Tour map showing boneyard."></p>
+<section class="epigraph">
+<p>“[T]he limits of memory and representation serve to remind composition
+scholars of the significant roles pre-reflective sensations play in our everyday
+lives and the responsibilities we hold at the same time to guard against their
+theorization or memorialization as such in writing.”
+<br/>&mdash;Scot Barnett, “Psychogeographies of Writing”</p>
+
+<p>“Hope lies in the fact that the appropriation of what is inscribed (the said)
+necessarily testifies to the inappropriable exposure that insists and resists.”
+<br/>&mdash;Diane Davis, “A Rhetoric of Responsibility”</p>
+</section>
+
+</article>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Augmented Reality -->
+    <div class="modal fade essay-section" id="augmentedreality" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Augmenting Space, Articulating Place</h1>
+          </div>
+
+<article class="modal-body">
+<p><img class="img-responsive" src="img/skyway-poster.jpg" alt="Vintage Skyway poster."></p>
+
+<section class="epigraph">
+<p>“The MEmorial is a form of humanities visualization of data sets,
+giving insight into large-scale complex processes and events within an
+arts and letters frame of reference.”
+<br/>&mdash;Gregory Ulmer, <i>Electronic Monuments</i></p>
+
+<p>“Hollis approached the body. That wasn’t there. But was. Alberto
+followed her with the laptop, careful of the cable. She felt as if he were
+holding his breath. She was holding hers.”
+<br/>&mdash;William Gibson, <i>Spook Country</i></p>
+</section>
+
+</article>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Memento Mortimer -->
+    <div class="modal fade essay-section" id="mortimer" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Memento Mortimer</h1>
+          </div>
+
+<article class="modal-body">
+<p><img class="img-responsive" src="img/mementomori.png" alt="Skeletons with mouse ears."></p>
+
+<section class="epigraph">
+
+<p>“By an extraordinary coincidence (but this derives without a doubt from
+the enchantment inherent to this universe), this frozen, childlike world
+is found to have been conceived and realized by a man who is himself now
+cryogenized: Walt Disney, who awaits his resurrection through an increase
+of 180 degrees centigrade.”
+<br/>&mdash;Jean Baudrillard, <i>Simulacra and Simulation</i></p>
+</section>
+
+</article>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Punctum Notifications -->
+    <div class="modal fade essay-section" id="punctum" role="dialog">
+      <div class="modal-dialog modal-lg">-->
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close section-close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Punctum Notifications</h1>
+          </div>
+<div class="modal-body">
+<section class="epigraph">
+  <p>“He was looking for a place to fall. He didn’t want to fall on the concrete, so he fell on the flower bed.”
+  <br/>&mdash;Deputy Robert Larson, Orange County Sheriff’s Office</p>
+</section>
+
+</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn section-close" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Acknowlegments -->
+    <div class="modal fade" id="acknowledgments" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title break-text">Acknowledgments</h1>
+          </div>
+<article class="modal-body">
+<p>Special thanks to the following individuals for their support and invaluable
+insights on this project:</p>
+
+<p>Gregory L. Ulmer, Sean Morey, Madison Jones, and Jacob W. Greene, who laid
+the groundwork for the project.</p>
+
+<p>Sid Dobrin, Barry Mauer, Shannon Butts, and Emily F. Brooks, for early
+inspiration and feedback.</p>
+
+<p>Byron Hanson, who helped with web development and layout.</p>
+
+<p>Susan Anderson, for spreading the rumor.</p>
+
+<p>Cynthia Barnett, for reminding us of the importance of good journalism.</p>
+</article>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- References -->
+    <div class="modal fade" id="references" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">References</h1>
+          </div>
+<article class="modal-body">
+
+</article>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Specs -->
+    <div class="modal fade" id="techspecs" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Technical Specifications</h1>
+          </div>
+<article class="modal-body">
+<p>As scholars of digital rhetoric and multimedia, we take seriously the
+affordances allowed through open source and copyleft tools and software. We are
+deeply thankful for the following open source tools, all of which made this
+project possible:</p>
+<p>Bootstrap v3.3.7</p>
+<p>Leaflet 1.0.3</p>
+<p>GIMP 2.8.20</p>
+<p>Unity (Personal) 2017.2</p>
+<p>Nikon D5000</p>
+</article>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default exit-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet-easybutton@2.0.0/src/easy-button.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/boundary.js"></script>
+    <script src="js/florida.js"></script>
+    <script src="js/map.js"></script>
+  </body>
+</html>

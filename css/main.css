@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=PT+Serif");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Droid+Serif");
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans");
+@import url("https://fonts.googleapis.com/css?family=Crete+Round");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+
+/*** Text ***/
+h1, h2, h3, header {
+  font-family: 'Crete Round', serif;
+  color: #111;
+  text-shadow: 0 1px 0 #FFF;
+}
+
+p {
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  line-height: 36px;
+  color: #111;
+  text-shadow: 0 1px 0 #FFF;
+}
+
+blockquote {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111;
+  background-color: #fff;
+  text-shadow: 0 1px 0 #FFF;
+  border-left: 10px solid #9b9b9b;
+  box-shadow: 2px 2px 15px #ccc;
+}
+
+.footnotes {
+  border-top: solid 1px #ccc;
+  margin-top: 50px;
+}
+
+.footnotes p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-shadow: 0 1px 0 #FFF;
+}
+
+.letter-wrapper {
+  border: 1px solid #ccc;
+  box-shadow:
+    0 19px 38px rgba(0,0,0,0.30),
+    0 15px 12px rgba(0,0,0,0.22);
+  margin: 30px;
+}
+
+.letter-text {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.letter-text p {
+  font-family: 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.letterhead-right, .letterhead-left {
+  margin-bottom: 30px;
+}
+
+.letterhead-right p {
+  text-align: right;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+
+.letterhead-left p {
+  text-align: left;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+
+.epigraph {
+  border-top: 0px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 15px;
+}
+
+.epigraph p {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #111;
+  text-shadow: 0 1px 0 #FFF;
+}
+
+#disney-letter {
+  width: 100%;
+}
+
+img.picture {
+  padding-top: 15px;
+  width: 50%;
+}
+
+.caption {
+  width: 50%;
+  background-color: #333;
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+
+.caption p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 10px 10px 10px 10px;
+  text-shadow: none;
+  color: #fff;
+  margin-top: 0px;
+}
+
+a {
+    color: #428BCA;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #428BCA;
+    text-decoration: none;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.break-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.citation p {
+  font-family: 'Times New Roman', serif;
+  padding-left: 40px ;
+  text-indent: -40px ;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/*** Navbar ***/
+.navbar-inverse {
+    background-color: #465c8b;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,.26);
+    z-index: 2;
+    height: 64px;
+}
+
+#sidebar-toggle-btn {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+img.logo {
+  display: block;
+  margin: 0 auto;
+  width: 45px;
+  padding-top: 5px;
+}
+
+.logo-btn {
+  width: 40px;
+  position: absolute;
+  top: 4.5px;
+  left: 4.5px;
+  cursor: pointer;
+}
+
+.logo-text-1 {
+  height: 55px;
+  margin-top: 7px;
+}
+
+.logo-text-2 {
+  display: none;
+}
+
+.navbar-collapse.in {
+  overflow-y: hidden;
+}
+.navbar-header .navbar-icon-container {
+  margin-right: 15px;
+}
+.navbar-header .navbar-icon {
+  line-height: 50px;
+  height: 50px;
+}
+.navbar-header a.navbar-icon {
+  margin-left: 25px;
+}
+
+/*** Snackbar ***/
+#snackbar {
+    width: 310px;
+    margin-left: -155px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 0px;
+    padding: 8px;
+    position: fixed;
+    z-index: 9;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    padding: 12px;
+}
+
+#snackbar .close {
+  color: #42A5F5;
+  opacity: 1.0;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  text-shadow: none;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.snackbar-text {
+  float: left;
+  width: 70%;
+  text-align: left;
+}
+
+#hide {
+  text-decoration: underline;
+  font-weight: 500;
+  color: #42A5F5;
+  cursor: pointer;
+}
+
+/**** Modals ****/
+.video {
+  /*margin-top: 20px;
+  margin-bottom: 20px;*/
+}
+
+.exit-btn, .exit-btn:hover, .exit-btn:active {
+  color: #ffffff;
+  background-color: #465c8b;
+}
+
+/*** Map ***/
+html, body, #container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#map {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.leaflet-top {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.leaflet-control-zoom.leaflet-bar.leaflet-control, .leaflet-bar.easy-button-container.leaflet-control {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  border: none;
+}
+
+.leaflet-bar {
+  box-shadow: none;
+}
+
+.leaflet-bar a:first-child, .leaflet-bar a:last-child {
+  border-radius: 0px;
+}
+
+.leaflet-bar a {
+  font-size: 24px;
+}
+
+.leaflet-bar a:hover {
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+}
+
+.leaflet-touch .leaflet-bar a, .leaflet-bar a, #about-button, #magic-tab, #epcot-tab, #hollywood-tab, #animal-tab {
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0px;
+  background-color: #333;
+  color: #fff;
+  opacity: 0.9;
+  box-shadow: none;
+}
+
+.leaflet-touch .leaflet-bar a:hover, .leaflet-bar a:hover, #about-button:hover, #magic-tab:hover, #epcot-tab:hover, #hollywood-tab:hover, #animal-tab:hover {
+  color: #42A5F5;
+  background-color: #333;
+  opacity: 1.0;
+}
+
+a.popup {
+  margin: 0;
+  position: relative;
+  color: #000;
+  font-weight: bold;
+}
+
+.leaflet-popup-content-wrapper {
+  margin-bottom: 5px;
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+#magic-tab i {
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+}
+
+#animal-tab {
+  margin-bottom: 50px;
+  border-bottom: none;
+}
+
+#about-button {
+  margin-bottom: 50px;
+  border-bottom: none;
+}
+
+/*** Media Queries ***/
+@media (max-width: 480px){
+  .logo-text-1 {
+    display: none;
+  }
+
+  .logo-text-2 {
+    display: block;
+    height: 45px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  .leaflet-control-zoom.leaflet-bar.leaflet-control {
+    display: none;
+  }
+
+  .letter-wrapper {
+    margin: 0px;
+  }
+
+  .letter-text {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 978px) {
+    .essay-section p {
+      margin-top: 18px;
+    }
+
+    .essay-section h3 {
+      margin-top: 36px;
+      margin-bottom: 36px;
+    }
+
+    .essay-section p, .essay-section h1, .essay-section h2, .essay-section h3 {
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+
+    blockquote {
+      margin-left: 45px;
+      padding-right: 45px;
+      margin-right: 45px;
+    }
+
+    .caption p {
+      margin-top: 0px;
+    }
+}
+
+@media (max-width: 978px){
+    img.picture, .caption {
+      width: 100%
+    }
+}
+
+/* Print Handling */
+@media print {
+  .navbar {
+    display: none !important;
+  }
+  .leaflet-control-container {
+    display: none !important;
+  }
+}
+
+/*Navbar Always Collapsed*/
+@media (min-width: 768px)
+{
+    .navbar-header
+    {
+        float: none;
+    }
+
+    .navbar-toggle
+    {
+        display: block;
+    }
+
+    .navbar-collapse.collapse
+    {
+        display: none !important;
+    }
+}
+
+@media (max-width: 992px) {
+  .navbar .navbar-brand {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px){
+  #sidebar {
+    display: none;
+  }
+  .url-break {
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+      hyphens: auto;
+  }
+  .dropdown-menu a i{
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 480px){
+    .leaflet-touch .leaflet-bar a, .leaflet-bar a, #about-button, #magic-tab, #epcot-tab, #hollywood-tab, #animal-tab {
+      height: 40px;
+      width: 40px;
+      line-height: 40px;
+    }
+
+    #animal-tab, #about-button {
+      margin-bottom: 40px;
+    }
+}

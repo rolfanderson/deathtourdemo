@@ -1,0 +1,121 @@
+/*** Sidebar ***/
+#table-contents li {
+  background-color: #EFEFEF;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: bold !important;
+  border: none  !important;
+  border-radius: 0px !important;
+}
+
+#table-contents i.mdi {
+  position: relative;
+  top: 1px;
+  padding-right: 11px;
+}
+
+#table-contents li:hover, #table-contents li:active, #table-contents li:focus {
+  background-color: #7589bb;
+  color: #FFFFFF;
+}
+
+#sidebar {
+  position: fixed;
+  display: block;
+  overflow: auto;
+  padding-top: 0px;
+  width: 0px;
+  height: 100%;
+  max-width: 100%;
+  float: left;
+  box-shadow: 10px 0 10px rgba(0,0,0,0.5);
+  z-index: 5;
+  transition: 0.5s;
+}
+
+/*#sidebar.show {
+    transform: translate(265px,0);
+    -webkit-transform: translate(265px,0);
+    -o-transform: translate(265px,0);
+    -moz-transform: translate(265px,0);
+
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+#sidebar.close {
+    transform: translate(-265px,0);
+    -webkit-transform: translate(-265px,0);
+    -o-transform: translate(-265px,0);
+    -moz-transform: translate(-265px,0);
+
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}*/
+
+.sidebar-backdrop {
+  cursor: pointer;
+  width: 100vw;
+  height: 100vh;
+  /* transparent black */
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 4;
+}
+
+#toc {
+  margin: 0px;
+  border: none;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#sidebar-hide-btn {
+  margin-top: -2px;
+}
+
+.panel-heading{
+   width: 250px;
+   height: 75px;
+   padding: 10px 15px;
+   background-color: #EFEFEF !important;
+   border-bottom: 0.5px solid #aeaeae !important;
+   border-radius: 0px !important;
+}
+.panel-body{
+  width: 250px;
+}
+
+.pre-scrollable {
+  max-height: none;
+}
+
+.feature-row {
+  cursor: pointer;
+  width: 250px;
+}
+.sidebar-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #EFEFEF;
+}
+.sidebar-table {
+  position: absolute;
+  width: 100%;
+  top: 103px;
+  bottom: 0px;
+  overflow: auto;
+}
+
+.table {
+  margin-bottom: 0px;
+}
